@@ -5,6 +5,7 @@ import { ApolloServer } from "@apollo/server";
 import loadMergeSchema from "./libs/loadMergedSchema";
 import { Resolvers } from "./resolvers";
 import { expressMiddleware } from "@apollo/server/express4";
+import cors from "cors";
 
 async function CreateAppolloServer() {
   const app = express();
@@ -17,7 +18,7 @@ async function CreateAppolloServer() {
   })
   
   await server.start();
-  app.use("/dymonggrahpql",express.json(),expressMiddleware(server, {}));
+  app.use("/dymonggrahpql",cors<cors.CorsRequest>(),express.json(),expressMiddleware(server, {}));
 
   app.listen({ port: 1010 }, () => {
     console.log("Server run at port 1010");

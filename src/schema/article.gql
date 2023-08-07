@@ -13,6 +13,7 @@ type Article {
   summary: String
   description: String
   category_id: Int
+  category: Category
 }
 
 input ArticleInput {

@@ -12,6 +12,7 @@ type Mutation {
 type Category {
   id: Int
   category_name: String
+  articles: [Article]
 }
 
 input CategoryInput {

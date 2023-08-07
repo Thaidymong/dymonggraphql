@@ -1,4 +1,4 @@
-export type CategoryInput ={
-    id:Number
-    category_name:  String
-}
+export type CategoryInput = {
+  id: Number;
+  category_name: String;
+};
