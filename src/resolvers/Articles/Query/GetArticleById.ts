@@ -1,3 +1,4 @@
+import moment from "moment-timezone";
 import { knx } from "src/connections/CreateKnexConnections";
 
 export const GetArticleById = async (_, { id }: { id: number }, {}) => {
@@ -10,6 +11,7 @@ export const GetArticleById = async (_, { id }: { id: number }, {}) => {
     .first();
   return {
     ...article,
-    category,
+    created_at: moment(article.created_at).format("DD, MMM, YYYY"),
+    category
   };
 };

@@ -12,8 +12,10 @@ type Article {
   title: String
   summary: String
   description: String
+  image: String
   category_id: Int
   category: Category
+  created_at: String
 }
 
 input ArticleInput {
